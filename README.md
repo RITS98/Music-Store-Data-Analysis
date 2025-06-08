@@ -16,6 +16,7 @@ There are 11 tables in the schema. The tables store important aspects of data fo
 2. All the data for respective tables are in the data folder.
 3. The python code to load the data from csv to database is in the `load_data` folder
 4. The bulk loading of data can be done without python code too by using the below command
+
     `
     COPY schema_name.table_name 
     FROM '/path/to/file.csv' 
