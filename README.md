@@ -36,5 +36,5 @@ There are 11 tables in the schema. The tables store important aspects of data fo
 
 ## SQL Code for Data Analysis
 
-
+![Data Analysis Code](https://github.com/RITS98/Music-Store-Data-Analysis-Using-SQL/blob/main/Create%20Table%20(DDL%20ops).sql)
     
