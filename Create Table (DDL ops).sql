@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS music_data_store.artist CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.artist (
 	artist_id NUMERIC,
-	name VARCHAR(50),
+	name VARCHAR(500),
 	CONSTRAINT pk_artistid PRIMARY KEY(artist_id)
 );
 
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS music_data_store.artist (
 DROP TABLE IF EXISTS music_data_store.album CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.album (
 	album_id NUMERIC,
-	name VARCHAR(10),
+	name VARCHAR(500),
 	artist_id NUMERIC,
 	CONSTRAINT pk_albumid PRIMARY KEY(album_id),
 	CONSTRAINT fk_artistid
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS music_data_store.album (
 DROP TABLE IF EXISTS music_data_store.playlist CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.playlist (
 	playlist_id NUMERIC,
-	name VARCHAR(200),
+	name VARCHAR(500),
 	CONSTRAINT pk_playlistid PRIMARY KEY(playlist_id)
 );
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS music_data_store.playlist (
 DROP TABLE IF EXISTS music_data_store.genre CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.genre (
 	genre_id NUMERIC,
-	name VARCHAR(50),
+	name VARCHAR(500),
 	CONSTRAINT pk_genreid PRIMARY KEY(genre_id)
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS music_data_store.genre (
 DROP TABLE IF EXISTS music_data_store.media_type CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.media_type (
 	media_type_id NUMERIC,
-	name VARCHAR(50),
+	name VARCHAR(500),
 	CONSTRAINT pk_media_type_id PRIMARY KEY(media_type_id)
 );
 
@@ -46,11 +46,11 @@ CREATE TABLE IF NOT EXISTS music_data_store.media_type (
 DROP TABLE IF EXISTS music_Data_store.track CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.track (
 	track_id NUMERIC,
-	name VARCHAR(100),
+	name VARCHAR(500),
 	album_id NUMERIC,
 	media_type_id NUMERIC,
 	genre_id NUMERIC,
-	composer VARCHAR(200),
+	composer VARCHAR(500),
 	milliseconds INT,
 	bytes INT,
 	unit_price FLOAT,
@@ -75,8 +75,9 @@ CREATE TABLE IF NOT EXISTS music_data_store.employee (
 	first_name VARCHAR,
 	title VARCHAR,
 	reports_to NUMERIC,
-	birthdate DATE,
-	hire_date DATE,
+	levels TEXT,
+	birthdate TIMESTAMP,
+	hire_date TIMESTAMP,
 	address VARCHAR,
 	city VARCHAR,
 	state VARCHAR,
@@ -113,7 +114,7 @@ DROP TABLE IF EXISTS music_data_store.invoice CASCADE;
 CREATE TABLE IF NOT EXISTS music_data_store.invoice (
 	invoice_id NUMERIC PRIMARY KEY,
 	customer_id NUMERIC REFERENCES music_data_store.customer(customer_id),
-	invoice_date DATE,
+	invoice_date TIMESTAMP,
 	billing_address VARCHAR,
 	billing_city VARCHAR,
 	billing_state VARCHAR,
@@ -131,5 +132,3 @@ CREATE TABLE IF NOT EXISTS music_data_store.invoice_line (
 	unit_price FLOAT,
 	quantity INT
 );
-
-
