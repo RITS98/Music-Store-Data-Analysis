@@ -26,7 +26,7 @@ class BulkLoadData:
         try:
             with open(self.csv_file_path, 'r') as f:
                 next(f)                                                       # Skip header row if exists
-                # Set the datestyle to DMY format
+                # Set the datestyle to DMY format default is MDY which is not according to the csv file
                 self.cursor.execute("SET datestyle = 'ISO, DMY';")
                 self.cursor.copy_expert(
                     sql.SQL("COPY {}.{} FROM STDIN WITH CSV").format(
