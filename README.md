@@ -1,5 +1,7 @@
 # Music Store Data Analysis Using SQL
 
+![Image](https://github.com/user-attachments/assets/e89aba8c-98dc-4254-800a-58b9e1431e93)
+
 - Tecnology Used:
     - PostgreSQL
     - Python
